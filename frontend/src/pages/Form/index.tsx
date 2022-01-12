@@ -4,8 +4,8 @@ import './styles.css'
 function Form() {
     const movie = {
         id: 1,
-        image: "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/jBJWaqoSCiARWtfV0GlqHrcdidd.jpg",
-        title: "The Witcher",
+        image: "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/vNpuAxGTl9HsUbHqam3E9CzqCvX.jpg",
+        title: "The Office",
         count: 2,
         score: 4.5
     };
