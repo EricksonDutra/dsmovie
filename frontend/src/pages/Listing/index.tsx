@@ -20,26 +20,23 @@ function Listing() {
         first: true,
         numberOfElements: 0,
         empty: true
-    })
+    });
 
     useEffect(()=>{
-        axios.get(`${BASE_URL}/movies?size=12$page=${pageNumber}&sort=id`).then(response => {
-            const data = response.data as MoviePage;
-            setPage(data);
+        axios.get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=id`)
+            .then(response => {
+                const data = response.data as MoviePage;
+                setPage(data);
         })
     },[pageNumber]);
 
-    const movie = {
-        id: 1,
-        image: "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/vNpuAxGTl9HsUbHqam3E9CzqCvX.jpg",
-        title: "The Office",
-        count: 2,
-        score: 4.5
-    };
+    const handlePageChange = (newPageNumber : number) => {
+        setPageNumber(newPageNumber);
+    }
 
     return (
         <>
-            <Pagination />
+            <Pagination page={page} onChange={handlePageChange}/>
 
             <div className="container">
                 <div className="row">
